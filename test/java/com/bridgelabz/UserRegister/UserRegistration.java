@@ -4,7 +4,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserRegistration {
+public class UserRegistration 
+{
 	Scanner input = new Scanner(System.in);
 	static final String NAME_PATTERN = "^[A-Z]+[a-zA-Z]{2,}$";
 	static final String  EMAIL_PATTERN = "^[a-zA-Z.]{3,}[@][a-zA-Z]{2}[.][a-z]{2}[.][a-z]{2}$";
