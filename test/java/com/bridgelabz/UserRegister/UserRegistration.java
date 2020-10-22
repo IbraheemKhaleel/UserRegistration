@@ -13,7 +13,7 @@ public class UserRegistration {
 	//Method for first name and second name entry validation
 	public void NameEntry()
     {
-        System.out.println("Enter your first name ");
+        System.out.println(" Enter your first name  ");
         String firstName = input.next();
         System.out.println("Enter your second name");
         String secondName = input.next();
