@@ -9,6 +9,7 @@ public class UserRegistration {
 	static final String NAME_PATTERN = "^[A-Z]+[a-zA-Z]{2,}$";
 	static final String  EMAIL_PATTERN = "^[a-zA-Z.]{3,}[@][a-zA-Z]{2}[.][a-z]{2}[.][a-z]{2}$";
 	static final String PHONENUMBER_PATTERN = "^[1-9][0-9][ ][6-9][0-9]{9}$";
+	static final String PASSWORD_PATTERN = "^(?=.*[A-Z]).{8,}$";
 	//Method for first name and second name entry validation
 	public void NameEntry()
     {
@@ -41,6 +42,14 @@ public class UserRegistration {
         Matcher match = pattern.matcher(mobileNumber);
         System.out.println(mobileNumber + "  " + match.matches());
     }
+    public void passwordEntry()
+    {
+        System.out.println("Enter your password with minimum 8 alphabets and one upper cases ");
+        String password = input.next();     
+        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+        Matcher match = pattern.matcher(password);
+        System.out.println(password + "  " + match.matches());
+    }
 	//Main function
 	public static void main(String[] args) 
 	{
@@ -48,6 +57,8 @@ public class UserRegistration {
 		UserRegistration userRegistration = new UserRegistration();
 		userRegistration.NameEntry();
 		userRegistration.emailEntry();
+		userRegistration.mobileNumberEntry();
+		userRegistration.passwordEntry();
 	}
 
 }
