@@ -10,8 +10,8 @@ public class UserRegistration {
 	//Method for first name and second name entry validation
 	public void NameEntry()
     {
-        System.out.println("Enter your first name ");
-        System.out.println("Enter your second name");
+        System.out.println(" Enter your first name ");
+        System.out.println(" Enter your second name ");
         String firstName = input.next();
         String secondName = input.next();
         Pattern pattern = Pattern.compile(NAME_PATTERN );
