@@ -8,7 +8,7 @@ public class UserRegistration
 {
 	Scanner input = new Scanner(System.in);
 	static final String NAME_PATTERN = "^[A-Z]+[a-zA-Z]{2,}$";    //name pattern for valid name
-	static final String  EMAIL_PATTERN = "^[a-zA-Z.]{3,}[@][a-zA-Z]{2}[.][a-z]{2}[.][a-z]{2}$";		//valid email pattern
+	static final String  EMAIL_PATTERN = "^[A-Za-z0-9]+([-\\\\.\\\\+\\\\_][0-9A-Za-z]+)*[@][A-Za-z0-9]+.[a-zA-Z]{2,4}([\\\\.\\\\,][a-z]{2,3})?$";	//valid email pattern
 	static final String PHONENUMBER_PATTERN = "^[1-9][0-9][ ][6-9][0-9]{9}$";	// valid phone number pattern
 	static final String PASSWORD_PATTERN ="^(?=.*[A-Z])" +  "(?=.*[!@#$%^&*]){1}" + "(?=.*[0-9]).{8,}$";	//valid password pattern
 	
