@@ -10,7 +10,7 @@ public class UserRegistration
 	static final String NAME_PATTERN = "^[A-Z]+[a-zA-Z]{2,}$";
 	static final String  EMAIL_PATTERN = "^[a-zA-Z.]{3,}[@][a-zA-Z]{2}[.][a-z]{2}[.][a-z]{2}$";
 	static final String PHONENUMBER_PATTERN = "^[1-9][0-9][ ][6-9][0-9]{9}$";
-	static final String PASSWORD_PATTERN = "^(?=.*[A-Z]).{8,}$";
+	static final String PASSWORD_PATTERN = "^(?=.*[A-Z])" + "(?=.*[0-9]).{8,}$";
 	//Method for first name and second name entry validation
 	public void NameEntry()
     {
