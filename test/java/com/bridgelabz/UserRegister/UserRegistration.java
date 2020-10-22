@@ -1,67 +1,58 @@
 package com.bridgelabz.UserRegister;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class UserRegistration 
 {
-	Scanner input = new Scanner(System.in);
-	static final String NAME_PATTERN = "^[A-Z]+[a-zA-Z]{2,}$";    //name pattern for valid name
-	static final String  EMAIL_PATTERN = "^[A-Za-z0-9]+([-\\\\.\\\\+\\\\_][0-9A-Za-z]+)*[@][A-Za-z0-9]+.[a-zA-Z]{2,4}([\\\\.\\\\,][a-z]{2,3})?$";	//valid email pattern
-	static final String PHONENUMBER_PATTERN = "^[1-9][0-9][ ][6-9][0-9]{9}$";	// valid phone number pattern
-	static final String PASSWORD_PATTERN ="^(?=.*[A-Z])" +  "(?=.*[!@#$%^&*]){1}" + "(?=.*[0-9]).{8,}$";	//valid password pattern
-	
-	//Method for first name and second name entry validation
-	public void NameEntry()
+	//Welcome text
+    @Test
+    public void Welcome()
     {
-        System.out.println(" Enter your first name  ");
-        String firstName = input.next();
-        System.out.println("Enter your second name");
-        String secondName = input.next();
-        Pattern pattern = Pattern.compile(NAME_PATTERN );
-        Matcher firstNameMatch = pattern.matcher(firstName);
-        Matcher secondNameMatch = pattern.matcher(secondName);
-        System.out.println(firstName + "  " + firstNameMatch.matches());
-        System.out.println(secondName + " " + secondNameMatch.matches());
+        System.out.println(" Welcome to the program");
     }
-	//Method for email entry validation
-	public void emailEntry()
-	{
-	    System.out.println("Enter your email ");
-	    String email = input.next();
-	    Pattern pattern;
-	    pattern = Pattern.compile(EMAIL_PATTERN);
-	    Matcher match = pattern.matcher(email);
-	    System.out.println(email + "  " + match.matches());
-	}
-	// method for entry of mobile number
-    public void mobileNumberEntry()
+    //Checking the validity of first name
+    @Test
+    public void givenfirstName_WhenProper_ReturnTrue() {
+        UserValidator userValidator = new UserValidator();
+        boolean result;
+        result = userValidator.validateFirstName("Kale");
+        Assert.assertTrue(result);
+    }
+    //Checking the validity of second name
+    @Test
+    public void givenLastName_WhenProper_ReturnTrue()
     {
-        System.out.println("Enter your 10 digit mobile number with country code followed by space ");
-        String mobileNumber = "91 9878987876";
-        Pattern pattern = Pattern.compile(PHONENUMBER_PATTERN);
-        Matcher match = pattern.matcher(mobileNumber);
-        System.out.println(mobileNumber + "  " + match.matches());
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validLastName("Ibrah");
+        Assert.assertTrue(result);
     }
-    //method for entry of password
-    public void passwordEntry()
+    //Checking the validity of email id
+    @Test
+    public void givenEmail_WhenValid_ReturnTrue()
     {
-        System.out.println("Enter your password with minimum 8 alphabets ,one numeric,one special character and one upper cases ");
-        String password = input.next();     
-        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
-        Matcher match = pattern.matcher(password);
-        System.out.println(password + "  " + match.matches());
+        UserValidator userValidator = new UserValidator();
+        boolean result;
+        result = userValidator.validateEmailId("ikhale@gmail.co.in");
+        Assert.assertTrue(result);
     }
-	//Main function
-	public static void main(String[] args) 
-	{
-		System.out.println(" Welcome to user registration program ");
-		UserRegistration userRegistration = new UserRegistration();
-		userRegistration.NameEntry();
-		userRegistration.emailEntry();
-		userRegistration.mobileNumberEntry();
-		userRegistration.passwordEntry();
-	}
+    //Checking the validity of mobile number
+    @Test
+    public void givenMobileNumber_WhenValid_ReturnTrue()
+    {
+        UserValidator userValidator = new UserValidator();
+        boolean result;
+        result = userValidator.validateMobileNumber("91 9745945143");
+        Assert.assertTrue(result);
+    }
+    //Check the validity of password
+    @Test
+    public void givenPassword_WhenValid_ReturnTrue()
+    {
+        UserValidator userValidator = new UserValidator();
+        boolean result;
+        result = userValidator.validatePassword("ASDsde986#");
+        Assert.assertTrue(result);
+    }
 
 }
