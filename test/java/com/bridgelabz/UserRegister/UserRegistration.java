@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class UserRegistration 
 {
-	//Welcome text
+    //Welcome text
     @Test
     public void Welcome()
     {
@@ -13,38 +13,46 @@ public class UserRegistration
     }
     //Checking the validity of first name
     @Test
-    public void givenfirstName_WhenProper_ReturnHappy() throws Exception {
+    public void givenfirstName_WhenProper_ReturnHappy() throws Exception 
+    {
         UserValidator userValidator = new UserValidator();
         String result;
         result = userValidator.validateFirstName("Kainey");
         Assert.assertEquals("happy", result);
     }
     @Test
-    public void givenfirstName_WhenImpProper_ReturnSad() throws Exception {
-       try {
-    	   UserValidator userValidator = new UserValidator();
+    public void givenfirstName_WhenImpProper_ReturnMesssage() throws Exception 
+    {
+    	try 
+    	{
+    		UserValidator userValidator = new UserValidator();
     	   userValidator.validateFirstName("za");
-       }catch(userRegistartionException e) {
-        Assert.assertEquals("Please enter correct first name", e.getMessage() );
+      }
+		catch(userRegistartionException e) 
+		{
+      	Assert.assertEquals("Please enter correct first name", e.getMessage() );
        }
     }
     //Checking the validity of second name
     @Test
     public void givenLastName_WhenProper_ReturnHappy() throws Exception
     {
-        UserValidator userValidator = new UserValidator();
+       UserValidator userValidator = new UserValidator();
        String result = userValidator.validLastName("Lekize");
        Assert.assertEquals("happy", result);
     }
     @Test
-    public void givenLastName_WhenImProper_ReturnSad() throws Exception
+    public void givenLastName_WhenImProper_ReturnMessage() throws Exception
     {
-    	 try {
+    	 try 
+		 {
       	   UserValidator userValidator = new UserValidator();
       	   userValidator.validLastName("lo");
-         }catch(userRegistartionException e) {
+       }
+		 catch(userRegistartionException e) 
+		 {
           Assert.assertEquals("Please enter correct second name", e.getMessage() );
-         }
+       }
     }
     //Checking the validity of email id
     @Test
@@ -56,14 +64,17 @@ public class UserRegistration
         Assert.assertEquals("happy", result);
     }
     @Test
-    public void givenEmail_WhenInValid_ReturnSad() throws Exception
+    public void givenEmail_WhenInValid_ReturnMessage() throws Exception
     {
-    	 try {
+    	 try 
+		 {
       	   UserValidator userValidator = new UserValidator();
       	   userValidator.validateEmailId("kiloe");
-         }catch(userRegistartionException e) {
+       }
+		 catch(userRegistartionException e) 
+		 {
           Assert.assertEquals("Please enter correct email", e.getMessage() );
-         }
+       }
     }
     //Checking the validity of mobile number
     @Test
@@ -75,14 +86,15 @@ public class UserRegistration
         Assert.assertEquals("happy", result);
     }
     @Test
-    public void givenMobileNumber_WhenInValid_ReturnSad() throws Exception
+    public void givenMobileNumber_WhenInValid_ReturnMessage() throws Exception
     {
-    	 try {
+    	 try 
+		 {
       	   UserValidator userValidator = new UserValidator();
       	   userValidator.validateMobileNumber("9869532");
-         }catch(userRegistartionException e) {
+       }catch(userRegistartionException e) {
           Assert.assertEquals("Please enter correct mobile number", e.getMessage() );
-         }
+       }
     }
     //Check the validity of password
     @Test
@@ -94,14 +106,14 @@ public class UserRegistration
         Assert.assertEquals("happy", result);
     }
     @Test
-    public void givenPassword_WhenInValid_ReturnSad() throws Exception
+    public void givenPassword_WhenInValid_ReturnMessage() throws Exception
     {
     	 try {
       	   UserValidator userValidator = new UserValidator();
       	   userValidator.validatePassword("ghyui");
-         }catch(userRegistartionException e) {
+       }catch(userRegistartionException e) {
           Assert.assertEquals("Please enter correct password", e.getMessage() );
-         }
+       }
     }
 
 }
