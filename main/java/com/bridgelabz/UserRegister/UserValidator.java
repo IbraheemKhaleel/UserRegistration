@@ -13,63 +13,55 @@ public class UserValidator
     {
         Pattern pattern = Pattern.compile(NAME_PATTERN);
         try {
-        if (pattern.matcher(fname).matches())
-        		return true;
-        }catch(Exception e)
-        {
-        	throw new userRegistartionException("Please enter correct first name" );
+        		if (pattern.matcher(fname).matches())
+        			return true;
+        }catch(Exception e) {
+        		throw new userRegistartionException("Please enter correct first name" );
         }
         	return false;
     }
     public boolean validLastName(String lname) throws Exception
     {
         Pattern pattern = Pattern.compile(NAME_PATTERN);
-        try
-        {
-        	if (pattern.matcher(lname).matches())
-        		return true;
-        } catch (Exception e)
-        {
-        	throw new userRegistartionException(" Please enter correct second name " );
+        try{
+        		if (pattern.matcher(lname).matches())
+        			return true;
+        } catch (Exception e) {
+        		throw new userRegistartionException(" Please enter correct second name " );
         }
         return false;
     }
     public boolean validateEmailId(String email) throws Exception
     {
         Pattern pattern = Pattern.compile(EMAIL_ADDRESS_PATTERN);
-        try
-        {
-        	if (pattern.matcher(email).matches())
-        		return true;
-        } catch (Exception e)
-        {
-        	throw new userRegistartionException("Please enter correct email" );
+        try{
+        		if (pattern.matcher(email).matches())
+        			return true;
+        } catch (Exception e) {
+        		throw new userRegistartionException("Please enter correct email" );
         }
         return false;
     }
     public boolean validateMobileNumber(String mobile) throws Exception
     {
         Pattern pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
-        try
-        {
-        	if (pattern.matcher(mobile).matches())
-        		return true;
+        try {
+        		if (pattern.matcher(mobile).matches())
+        			return true;
         } catch (Exception e)
         {
-        	throw new userRegistartionException("Please enter correct mobile number" );
+        		throw new userRegistartionException("Please enter correct mobile number" );
         }
         return false;
     }
     public boolean validatePassword(String password) throws Exception
     {
         Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
-        try
-        {
-        	if (pattern.matcher(password).matches())
-        		return true;
-        } catch (Exception e)
-        {
-        	throw new userRegistartionException("Please enter correct password" );
+        try{
+        		if (pattern.matcher(password).matches())
+        			return true;
+        } catch (Exception e) {
+        		throw new userRegistartionException("Please enter correct password" );
         }
         return false;
     }
