@@ -17,7 +17,7 @@ public class UserRegistration
     {
         UserValidator userValidator = new UserValidator();
         boolean result;
-        result = userValidator.validateFirstName("Kainey");
+        result = userValidator.validateName("Kainey");
         Assert.assertEquals(true, result);
     }
     @Test
@@ -26,7 +26,7 @@ public class UserRegistration
     	try 
     	{
     		UserValidator userValidator = new UserValidator();
-    	   userValidator.validateFirstName("za");
+    	   userValidator.validateName("za");
       }
 		catch(userRegistartionException e) 
 		{
@@ -38,7 +38,7 @@ public class UserRegistration
     public void givenLastName_WhenProper_ReturnTrue() throws Exception
     {
        UserValidator userValidator = new UserValidator();
-       boolean result = userValidator.validLastName("Lekize");
+       boolean result = userValidator.validateName("Lekize");
        Assert.assertEquals(true, result);
     }
     @Test
@@ -47,7 +47,7 @@ public class UserRegistration
     	 try 
 		 {
       	   UserValidator userValidator = new UserValidator();
-      	   userValidator.validLastName("lo");
+      	   userValidator.validateName("lo");
        }
 		 catch(userRegistartionException e) 
 		 {
